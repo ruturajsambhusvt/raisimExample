@@ -5,7 +5,8 @@ int main(int argc, char* argv[]) {
   auto binaryPath = raisim::Path::setFromArgv(argv[0]);
 
   raisim::World world;
-  auto laikago = world.addArticulatedSystem(binaryPath.getDirectory() + "\\rsc\\laikago\\laikago.urdf");
+  // auto laikago = world.addArticulatedSystem(binaryPath.getDirectory() + "\\rsc\\laikago\\laikago.urdf");
+  auto A1 = world.addArticulatedSystem(binaryPath.getDirectory() + "\\rsc\\A1\\A1_modified_new.urdf");
   auto ball = world.addSphere(0.1, 1);
   auto ground = world.addGround(-2);
   world.setTimeStep(0.002);

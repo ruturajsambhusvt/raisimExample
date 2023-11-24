@@ -4,6 +4,10 @@ project(raisim_examples LANGUAGES CXX)
 find_package(raisim CONFIG REQUIRED)
 find_package(Eigen3 REQUIRED)
 
+find_package(raisim CONFIG HINTS "/home/trec/WorkRaj/raisim_legged/raisim_build/lib/cmake/raisim")
+find_package(OGRE CONFIG REQUIRED PATHS "/home/trec/WorkRaj/raisim_legged/raisim_build/lib/OGRE/cmake")
+find_package(raisimOgre CONFIG HINTS "/home/trec/WorkRaj/raisim_legged/raisim_build/share/raisimOgre/cmake")
+
 include_directories (${EIGEN3_INCLUDE_DIRS})
 
 add_executable(raisimExample main.cpp)
