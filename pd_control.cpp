@@ -24,7 +24,10 @@ int main(int argc, char* argv[]) {
   auto binaryPath = raisim::Path::setFromArgv(argv[0]);
 
   raisim::World world;
-  auto A1 = world.addArticulatedSystem(binaryPath.getDirectory() + "..\\rsc\\A1\\A1_modified_new.urdf");
+  std::string path = binaryPath.getDirectory() + "\\..\\rsc\\A1\\A1_w_kinova.urdf";
+  std::cout<<"Path:"<<path<<std::endl;
+  // auto A1 = world.addArticulatedSystem(binaryPath.getDirectory() + "..\\rsc\\A1\\A1_modified_new.urdf");
+  auto A1 = world.addArticulatedSystem(path);
   auto ball = world.addSphere(0.1, 1);
   auto ground = world.addGround(-2);
   world.setTimeStep(0.002);
@@ -61,7 +64,7 @@ int main(int argc, char* argv[]) {
     // Apply the torques
     //How do I set random torques?
     for (size_t j = 0; j < numJoints; j++) {
-      torques(j) = (rand() % 20 + 1);
+      torques(j) = (rand() % 2 + 1);
     }
     A1->setGeneralizedForce(torques);
     RS_TIMED_LOOP(world.getTimeStep()*1e6);
