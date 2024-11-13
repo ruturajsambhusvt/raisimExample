@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
   auto binaryPath = raisim::Path::setFromArgv(argv[0]);
 
   raisim::World world;
-  std::string path = binaryPath.getDirectory() + "\\..\\rsc\\A1\\A1_w_kinova.urdf";
+  std::string path = binaryPath.getDirectory() + "\\..\\rsc\\A1\\A1_modified_new_w_kinova_from_Jeeseop.urdf";
   std::cout<<"Path:"<<path<<std::endl;
   // auto A1 = world.addArticulatedSystem(binaryPath.getDirectory() + "..\\rsc\\A1\\A1_modified_new.urdf");
   auto A1 = world.addArticulatedSystem(path);

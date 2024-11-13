@@ -1017,23 +1017,6 @@
       <inertia ixx="7.8999684e-07" ixy="0" ixz="0" iyy="7.8999684e-07" iyz="0" izz="8e-08"/>
     </inertial>
   </link>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <transmission name="RL_hip_tran">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RL_hip_joint">
